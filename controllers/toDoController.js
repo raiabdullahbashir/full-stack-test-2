@@ -3,10 +3,10 @@ const TODOs = require("../models/toDoTask");
 const toDoController = {
   createToDo: async (req, res) => {
     try {
-      //   const { content } = req.body;
-      //   console.log("content: " + content);
-      //   if (!content)
-      //     return res.status(400).json({ msg: "Please provide content of todo." });
+      const { content } = req.body;
+      console.log("content: " + content);
+      if (!content)
+        return res.status(400).json({ msg: "Please provide content of todo." });
 
       const newToDo = new TODOs({
         content: "first",
