@@ -8,9 +8,6 @@ const todoTaskSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  time: {
-    type: Date,
-    default: new Date(),
-  },
+  user: { type: mongoose.SchemaTypes.ObjectId, ref: "users" },
 });
 module.exports = mongoose.model("TODOs", todoTaskSchema);
